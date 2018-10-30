@@ -1,0 +1,12 @@
+bin
+debug
+*.suo
+.vs
+packages
+*.user
+obj
+*.pfx
+AppPackages
+BundleArtifacts
+/LiveWallpaper.App/Package.StoreAssociation.xml
+/LiveWallpaper.App/_pkginfo.txt
