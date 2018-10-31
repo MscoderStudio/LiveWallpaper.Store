@@ -51,10 +51,12 @@ namespace LiveWallpaper.Store.Server
         public Task<List<SortServerObj>> GetSorts()
         {
             //var result = await HttpGet<List<SortServerObj>>($"{_host}/sorts");
-            List<SortServerObj> result = new List<SortServerObj>();
-            result.Add(new SortServerObj() { ID = 0, Name = "最热" });
-            result.Add(new SortServerObj() { ID = 1, Name = "最新" });
-            result.Add(new SortServerObj() { ID = 2, Name = "近期热门" });
+            List<SortServerObj> result = new List<SortServerObj>
+            {
+                new SortServerObj() { ID = 0, Name = "最热" },
+                new SortServerObj() { ID = 1, Name = "最新" },
+                new SortServerObj() { ID = 2, Name = "近期热门" }
+            };
             return Task.FromResult(result);
         }
 

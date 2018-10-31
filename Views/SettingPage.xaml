@@ -9,6 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
     <Grid>
-        <jsonConfiger:JsonConfierControl DataContext="{Binding JsonConfierViewModel,Mode=OneWay}" />
+        <jsonConfiger:JsonConfierControl DataContext="{Binding JsonConfierViewModel, Mode=OneWay}" />
     </Grid>
 </Page>
