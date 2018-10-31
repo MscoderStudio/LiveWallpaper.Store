@@ -230,7 +230,7 @@ namespace LiveWallpaper.Store.Services
 
             var tempList = await _localServer.GetWallpapers(SelectedTag.ID, SelectedSort.ID, _pageIndex++);
             if (tempList == null)
-                return new ReadOnlyCollection<WallpaperServerObj>(Wallpapers);
+                return null;
 
             tempList.ForEach(m => Wallpapers.Add(m));
 

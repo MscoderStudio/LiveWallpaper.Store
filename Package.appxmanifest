@@ -21,7 +21,7 @@
         <uap:SplashScreen Image="assets\SplashScreen\SplashScreen.png" />
       </uap:VisualElements>
       <Extensions>
-        <desktop:Extension Category="windows.fullTrustProcess" Executable="LiveWallpaperServer\LiveWallpaperServer.exe" />
+        <!--<desktop:Extension Category="windows.fullTrustProcess" Executable="LiveWallpaperServer\LiveWallpaperServer.exe" />-->
         <uap:Extension Category="windows.protocol" Executable="LiveWallpaper.Store.exe" EntryPoint="LiveWallpaper.Store">
           <uap:Protocol Name="live.wallpaper.store">
             <uap:DisplayName>LiveWallpaper.Store</uap:DisplayName>
@@ -33,7 +33,7 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <rescap:Capability Name="broadFileSystemAccess" />
-    <rescap:Capability Name="runFullTrust" />
+    <!--<rescap:Capability Name="runFullTrust" />-->
   </Capabilities>
   <genTemplate:Metadata>
     <genTemplate:Item Name="generator" Value="Windows Template Studio" />

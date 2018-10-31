@@ -123,6 +123,8 @@ namespace LiveWallpaper.Store.ViewModels
         {
             if (Wallpapers != null)
                 Wallpapers.Clear();
+            else
+                Wallpapers = new IncrementalLoadingCollection<WallpaperSorce, WallpaperServerObj>(WallpaperSorce);
         }
 
         #endregion

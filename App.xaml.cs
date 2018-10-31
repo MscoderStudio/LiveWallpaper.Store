@@ -39,9 +39,9 @@ namespace LiveWallpaper.Store
         {
             if (!args.PrelaunchActivated)
             {
-#pragma warning disable UWP003 // UWP-only
-                await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
-#pragma warning restore UWP003 // UWP-only
+//#pragma warning disable UWP003 // UWP-only
+//                await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+//#pragma warning restore UWP003 // UWP-only
                 await ActivationService.ActivateAsync(args);
             }
         }
@@ -50,9 +50,9 @@ namespace LiveWallpaper.Store
         {
             if (e.Kind == ActivationKind.Protocol)
             {
-#pragma warning disable UWP003 // UWP-only
-                await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
-#pragma warning restore UWP003 // UWP-only
+//#pragma warning disable UWP003 // UWP-only
+//                await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+//#pragma warning restore UWP003 // UWP-only
                 ProtocolActivatedEventArgs protocolArgs = (ProtocolActivatedEventArgs)e;
                 Uri uri = protocolArgs.Uri;
                 if (uri.Scheme == "live.wallpaper.store")
