@@ -13,6 +13,7 @@ namespace LiveWallpaper.Store.Server
     public class LocalServer : IServer
     {
         string _host;
+        bool _fuckMS = false;
 
         public async Task<List<TagServerObj>> GetTags()
         {
@@ -29,6 +30,12 @@ namespace LiveWallpaper.Store.Server
                         Name = d.tagName
                     };
                 });
+                if (!_fuckMS)
+                {
+                    // "鬼畜",
+                    string[] names = new string[] { "游戏风象", "美の風景", "科幻世界" };
+                    result = result.Where(m => names.Contains(m.Name)).ToList();
+                }
                 return result;
             }
             catch
@@ -54,9 +61,15 @@ namespace LiveWallpaper.Store.Server
             List<SortServerObj> result = new List<SortServerObj>
             {
                 new SortServerObj() { ID = 0, Name = "最热" },
-                new SortServerObj() { ID = 1, Name = "最新" },
-                new SortServerObj() { ID = 2, Name = "近期热门" }
             };
+
+            if (_fuckMS)
+            {
+                result.Add(new SortServerObj() { ID = 1, Name = "最新" });
+                result.Add(new SortServerObj() { ID = 2, Name = "近期热门" });
+            }
+
+
             return Task.FromResult(result);
         }
 
@@ -87,6 +100,8 @@ namespace LiveWallpaper.Store.Server
 
         public Task InitlizeServer(string url)
         {
+            _fuckMS = url == "whosyourdady";
+
             _host = url;
             return Task.CompletedTask;
         }
