@@ -8,7 +8,7 @@ namespace LiveWallpaper.Store.Models.Settngs
 {
     public class GeneralSetting
     {
-        public string WallpaperSaveDir { get; set; }
+        public string WallpaperSaveDir { get; private set; } = @"%userprofile%\videos\LivewallpaperCache (因为UWP权限问题，本参数无法修改。更多高级功能请加qq群:641405255 ）";
 
         internal static GeneralSetting GetDefault()
         {

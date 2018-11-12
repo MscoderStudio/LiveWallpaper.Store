@@ -183,7 +183,8 @@ namespace LiveWallpaper.Store.ViewModels
                     return;
                 }
 
-                StorageFolder storageFolder = await StorageFolder.GetFolderFromPathAsync(_appService.Setting.General.WallpaperSaveDir);
+                //StorageFolder storageFolder = await StorageFolder.GetFolderFromPathAsync(_appService.Setting.General.WallpaperSaveDir);
+                StorageFolder storageFolder = await KnownFolders.VideosLibrary.CreateFolderAsync("LivewallpaperCache", CreationCollisionOption.OpenIfExists);
                 var folder = await storageFolder.CreateFolderAsync(Guid.NewGuid().ToString());
 
                 string previewName = $"preview{ Path.GetExtension(selected.Img)}";

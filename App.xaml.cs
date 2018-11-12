@@ -72,18 +72,18 @@ namespace LiveWallpaper.Store
                             {
                                 System.Diagnostics.Debug.WriteLine(ex);
                             }
-                            var setting = new SettingObject
-                            {
-                                Server = new ServerSetting
-                                {
-                                    ServerUrl = host
-                                },
-                                General = new GeneralSetting()
-                                {
-                                    WallpaperSaveDir = wallpaperDir
-                                }
-                            };
-                            await ApplicationData.Current.LocalSettings.SaveAsync("config", setting);
+                            //var setting = new SettingObject
+                            //{
+                            //    //Server = new ServerSetting
+                            //    //{
+                            //    //    ServerUrl = host
+                            //    //},
+                            //    //General = new GeneralSetting()
+                            //    //{
+                            //    //    WallpaperSaveDir = wallpaperDir
+                            //    //}
+                            //};
+                            //await ApplicationData.Current.LocalSettings.SaveAsync("config", setting);
                         }
                     }
 
