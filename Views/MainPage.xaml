@@ -596,13 +596,20 @@
     <Page.BottomAppBar>
         <CommandBar>
             <AppBarButton
+                x:Name="QQ"
+                x:Uid="appBarBtn_QQ"
+                Icon="Repair"
+                Label="QQ群" />
+            <AppBarButton
                 x:Name="InitServer"
                 x:Uid="appBarBtn_refresh"
-                Icon="Refresh" />
+                Icon="Refresh"
+                Label="刷新" />
             <AppBarButton
                 x:Name="Setting"
                 x:Uid="appBarBtn_setting"
-                Icon="Setting" />
+                Icon="Setting"
+                Label="设置" />
             <AppBarButton
                 x:Name="Install"
                 x:Uid="appBarBtn_install"

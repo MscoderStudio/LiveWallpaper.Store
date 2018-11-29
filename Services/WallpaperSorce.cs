@@ -1,4 +1,5 @@
-﻿using DZY.DotNetUtil.ViewModels;
+﻿using Caliburn.Micro;
+using DZY.DotNetUtil.ViewModels;
 using LiveWallpaper.Store.Server;
 using LiveWallpaper.Store.ViewModels;
 using Microsoft.Toolkit.Collections;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
 
 namespace LiveWallpaper.Store.Services
 {
@@ -222,6 +224,16 @@ namespace LiveWallpaper.Store.Services
         {
             if (SelectedTag == null || SelectedSort == null)
                 return null;
+
+            var service = IoC.Get<AppService>();
+            if (_pageIndex >= 2 && AppService.IsLocked(service.Setting.Server.ServerUrl))
+            {
+#pragma warning disable UWP003 // UWP-only                
+                MessageDialog msg = new MessageDialog("更多壁纸请加群 641405255 免费解锁");
+#pragma warning restore UWP003 // UWP-only
+                var result = await msg.ShowAsync();
+                return null;
+            }
 
             if (Wallpapers == null)
                 Wallpapers = new List<WallpaperServerObj>();

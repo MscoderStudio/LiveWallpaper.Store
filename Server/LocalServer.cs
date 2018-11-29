@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using LiveWallpaper.Store.Services;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -32,8 +33,8 @@ namespace LiveWallpaper.Store.Server
                 });
                 if (!_fuckMS)
                 {
-                    // "鬼畜", "美の風景"
-                    string[] names = new string[] { "游戏风象", "科幻世界" };
+                    // "鬼畜", "美の風景, "科幻世界""
+                    string[] names = new string[] { "游戏风象" };
                     result = result.Where(m => names.Contains(m.Name)).ToList();
                 }
                 return result;
@@ -100,7 +101,7 @@ namespace LiveWallpaper.Store.Server
 
         public Task InitlizeServer(string url)
         {
-            _fuckMS = url == "whosyourdady";
+            _fuckMS = !AppService.IsLocked(url);
 
             _host = url;
             return Task.CompletedTask;

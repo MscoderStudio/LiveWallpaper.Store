@@ -42,5 +42,10 @@ namespace LiveWallpaper.Store.Services
             config.CheckDefaultSetting();
             Setting = config;
         }
+
+        public static bool IsLocked(string serverUrl)
+        {
+            return "whosyourdady" != serverUrl;
+        }
     }
 }

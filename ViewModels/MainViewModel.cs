@@ -128,6 +128,19 @@ namespace LiveWallpaper.Store.ViewModels
             Server.InitServer();
         }
 
+        public async void QQ()
+        {
+            try
+            {
+#pragma warning disable UWP003 // UWP-only
+                bool success = await Windows.System.Launcher.LaunchUriAsync(new Uri("https://jq.qq.com/?_wv=1027&k=5ek8llo"));
+#pragma warning restore UWP003 // UWP-only
+            }
+            catch (Exception)
+            {
+            }
+        }
+
         //public async void Install()
         //{
         //    try
