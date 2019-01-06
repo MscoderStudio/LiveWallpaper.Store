@@ -100,21 +100,15 @@
     <PRIResource Include="Strings\zh-cn\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\LiveWallpaper\LiveWallpaperEngine\ProjectInfo.cs">
-      <Link>LiveWallpaperEngine\ProjectInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\LiveWallpaper\LiveWallpaperEngine\WallpaperManager.Define.cs">
-      <Link>LiveWallpaperEngine\WallpaperManager.Define.cs</Link>
-    </Compile>
-    <Compile Include="..\LiveWallpaper\LiveWallpaperEngine\WallpaperType.cs">
-      <Link>LiveWallpaperEngine\WallpaperType.cs</Link>
-    </Compile>
     <Compile Include="Activation\ActivationHandler.cs" />
     <Compile Include="Activation\ProtocolLaunchActivationHandler.cs" />
     <Compile Include="Activation\DefaultLaunchActivationHandler.cs" />
     <Compile Include="Helpers\Json.cs" />
     <Compile Include="Helpers\PropertyChangedBaseExtensions.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
+    <Compile Include="LiveWallpaperEngine\ProjectInfo.cs" />
+    <Compile Include="LiveWallpaperEngine\WallpaperManager.Define.cs" />
+    <Compile Include="LiveWallpaperEngine\WallpaperType.cs" />
     <Compile Include="Models\Settngs\GeneralSetting.cs" />
     <Compile Include="Models\Settngs\ServerSetting.cs" />
     <Compile Include="Models\Settngs\SettingObject.cs" />
